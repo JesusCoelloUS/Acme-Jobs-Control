@@ -33,6 +33,7 @@ employer.job.form.button.duties = Duties
 employer.job.form.button.duty.create = New duty
 employer.job.form.button.auditRecords = Audit records
 employer.job.form.button.daring = Daring
+employer.job.form.button.daring.create = Create daring
 
 employer.job.error.spam = This job is spam
 employer.job.error.duties = You cannot save a job in final mode until its duties sums 100%

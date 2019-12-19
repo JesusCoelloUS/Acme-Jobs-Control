@@ -17,12 +17,21 @@ import acme.framework.controllers.AbstractController;
 public class EmployerDaringController extends AbstractController<Employer, Daring> {
 
 	@Autowired
-	private EmployerDaringShowService showService;
+	private EmployerDaringShowService	showService;
+	@Autowired
+	private EmployerDaringCreateService	createService;
+	@Autowired
+	private EmployerDaringUpdateService	updateService;
+	@Autowired
+	private EmployerDaringDeleteService	deleteService;
 
 
 	@PostConstruct
 	private void initialize() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

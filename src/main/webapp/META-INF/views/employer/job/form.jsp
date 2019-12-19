@@ -57,6 +57,9 @@
 		<jstl:if test="${hasADaring}">
   			<acme:button code="employer.job.form.button.daring" action="/acme-jobs/employer/daring/show?id=${daringId}"/>
   		</jstl:if>
+  		<jstl:if test="${!hasADaring && canBeUpdated}">
+  			<acme:button code="employer.job.form.button.daring.create" action="/acme-jobs/employer/daring/create?id=${id}"/>
+  		</jstl:if>
 	</jstl:if>
 	
 	<acme:form-submit test="${command == 'show' && canBeUpdated}" code="employer.job.form.button.update" action="/employer/job/update"/>

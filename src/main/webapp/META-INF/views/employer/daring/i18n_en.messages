@@ -10,4 +10,7 @@
 
 employer.daring.form.label.text = Text
 employer.daring.form.label.moreInfo = More info
+employer.daring.form.button.create = Create
+employer.daring.form.button.update = Update
+employer.daring.form.button.delete = Delete
 employer.daring.form.button.return = Return

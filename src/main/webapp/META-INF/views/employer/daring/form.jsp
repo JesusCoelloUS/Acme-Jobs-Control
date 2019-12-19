@@ -19,5 +19,11 @@
 <acme:form>
 	<acme:form-textarea code="employer.daring.form.label.text" path="text"/>
 	<acme:form-textbox code="employer.daring.form.label.moreInfo" path="moreInfo"/>
+	
+	<acme:form-submit test="${command == 'create'}" code="employer.daring.form.button.create" action="/employer/daring/create?id=${id}"/>
+	<acme:form-submit test="${command == 'show' && canBeUpdatedOrDeleted}" code="employer.daring.form.button.update" action="/employer/daring/update"/>
+	<acme:form-submit test="${command == 'update'}" code="employer.daring.form.button.update" action="/employer/daring/update"/>
+	<acme:form-submit test="${command == 'show' && canBeUpdatedOrDeleted}" code="employer.daring.form.button.delete" action="/employer/daring/delete"/>
+	<acme:form-submit test="${command == 'delete'}" code="employer.daring.form.button.delete" action="/employer/daring/delete"/>
   	<acme:form-return code="employer.daring.form.button.return"/>
 </acme:form>

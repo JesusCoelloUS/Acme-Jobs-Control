@@ -66,7 +66,6 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		errors.state(request, !this.isSpam(entity), "description", "employer.job.error.spam");
 		errors.state(request, this.checkReference(entity), "reference", "employer.job.error.reference");
 		errors.state(request, this.checkDeadline(entity), "deadline", "employer.job.error.deadline");
-
 	}
 
 	private boolean isSpam(final Job j) {

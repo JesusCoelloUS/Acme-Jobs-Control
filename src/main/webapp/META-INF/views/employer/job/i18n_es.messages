@@ -25,6 +25,8 @@ employer.job.form.label.description = Descripción
 employer.job.form.label.finalMode	= Modo final
 employer.job.form.label.finalMode.true = Verdadero
 employer.job.form.label.finalMode.false = Falso
+employer.job.form.label.daring.text = Texto del reto
+employer.job.form.label.daring.moreInfo = Más información del reto
 employer.job.form.button.return = Volver
 employer.job.form.button.update = Editar
 employer.job.form.button.create = Crear
@@ -33,6 +35,7 @@ employer.job.form.button.duties = Deberes
 employer.job.form.button.duty.create = Nuevo deber
 employer.job.form.button.auditRecords = Registros de auditor
 employer.job.form.button.daring = Reto
+employer.job.form.button.daring.create = Crear reto
 
 employer.job.error.spam = Este empleo es spam
 employer.job.error.duties = No puede guardarse en estado final un empleo hasta que sus deberes sumen 100%
