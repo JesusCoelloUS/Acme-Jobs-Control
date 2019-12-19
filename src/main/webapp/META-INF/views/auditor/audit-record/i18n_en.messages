@@ -1,0 +1,28 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+auditor.audit-record.list.label.title = Title
+auditor.audit-record.list.label.status = Status
+auditor.audit-record.list.label.creationMoment = Creation moment
+
+auditor.audit-record.form.label.title = Title
+auditor.audit-record.form.label.status = Status
+auditor.audit-record.form.label.draft = Draft
+auditor.audit-record.form.label.published = Published
+auditor.audit-record.form.label.creationMoment = Creation moment
+auditor.audit-record.form.label.body = Body
+auditor.audit-record.form.label.finalMode = Final mode
+auditor.audit-record.form.label.true = True
+auditor.audit-record.form.label.false = False
+auditor.audit-record.form.button.create = Create
+auditor.audit-record.form.button.update = Update
+auditor.audit-record.form.button.return = Return
+
+auditor.audit-record.error.status = Draft records must not be saved in final mode. Published records must be saved in final mode

@@ -1,0 +1,19 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not thread-message any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.thread-message.list.label.title = Título
+authenticated.thread-message.list.label.creationMoment = Fecha de creación
+
+authenticated.thread-message.form.label.title = Título
+authenticated.thread-message.form.label.creationMoment = Fecha de creación
+authenticated.thread-message.form.label.tags = Etiquetas
+authenticated.thread-message.form.label.body = Cuerpo
+authenticated.thread-message.form.button.return = Volver
+authenticated.thread-message.form.button.create = Enviar

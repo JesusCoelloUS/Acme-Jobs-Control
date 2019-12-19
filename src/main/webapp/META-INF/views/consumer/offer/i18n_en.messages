@@ -1,0 +1,22 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+consumer.offer.form.label.deadline = Deadline
+consumer.offer.form.label.ticker = Ticker
+consumer.offer.form.label.title = Title
+consumer.offer.form.label.creationMoment = Creation moment
+consumer.offer.form.label.text = Text
+consumer.offer.form.label.minMoney = Minimum money
+consumer.offer.form.label.maxMoney = Maximum money
+consumer.offer.form.label.checked = Confirm
+consumer.offer.error.must-check = You have to confirm to store the offer
+
+consumer.offer.form.button.submit = Create
+consumer.offer.form.button.return = Return
