@@ -23,6 +23,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `answer` (
+       `id` integer not null,
+        `version` integer not null,
+        `password` varchar(255),
+        `password_protected` bit,
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `application` (
        `id` integer not null,
         `version` integer not null,
@@ -33,6 +42,7 @@
         `skills` varchar(255),
         `statement` varchar(255),
         `status` varchar(255),
+        `answer_id` integer,
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
@@ -120,6 +130,14 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `daring` (
+       `id` integer not null,
+        `version` integer not null,
+        `more_info` varchar(255),
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
@@ -161,6 +179,7 @@
         `salary_currency` varchar(255),
         `status` varchar(255),
         `title` varchar(255),
+        `daring_id` integer,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -285,6 +304,11 @@
        references `user_account` (`id`);
 
     alter table `application` 
+       add constraint `FK7ssxk74xvvk7eicjxk2s1ns3a` 
+       foreign key (`answer_id`) 
+       references `answer` (`id`);
+
+    alter table `application` 
        add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
        foreign key (`job_id`) 
        references `job` (`id`);
@@ -328,6 +352,11 @@
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `job` 
+       add constraint `FKftv0stic3x3la4e51rfooqa4d` 
+       foreign key (`daring_id`) 
+       references `daring` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 

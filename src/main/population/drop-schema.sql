@@ -9,6 +9,10 @@
 
     alter table `application` 
        drop 
+       foreign key `FK7ssxk74xvvk7eicjxk2s1ns3a`;
+
+    alter table `application` 
+       drop 
        foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
 
     alter table `application` 
@@ -45,6 +49,10 @@
 
     alter table `job` 
        drop 
+       foreign key `FKftv0stic3x3la4e51rfooqa4d`;
+
+    alter table `job` 
+       drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
     alter table `provider` 
@@ -73,6 +81,8 @@
 
     drop table if exists `anonymous`;
 
+    drop table if exists `answer`;
+
     drop table if exists `application`;
 
     drop table if exists `audit_record`;
@@ -90,6 +100,8 @@
     drop table if exists `configuration`;
 
     drop table if exists `consumer`;
+
+    drop table if exists `daring`;
 
     drop table if exists `duty`;
 

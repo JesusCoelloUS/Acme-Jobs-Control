@@ -24,3 +24,4 @@ authenticated.job.form.button.return = Volver
 authenticated.job.form.button.duties = Deberes
 authenticated.job.form.button.auditRecords = Registros de auditor
 authenticated.job.form.button.audit-record.create = Nuevo registro de auditor
+authenticated.job.form.button.daring = Reto

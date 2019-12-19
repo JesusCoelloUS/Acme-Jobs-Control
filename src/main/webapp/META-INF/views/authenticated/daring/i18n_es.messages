@@ -1,0 +1,13 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not job any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.daring.form.label.text = Texto
+authenticated.daring.form.label.moreInfo = Más información
+authenticated.daring.form.button.return = Volver

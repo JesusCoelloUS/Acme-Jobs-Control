@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.transaction.Transactional;
@@ -17,6 +18,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.darings.Daring;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -72,6 +74,10 @@ public class Job extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer employer;
+	private Employer	employer;
+
+	@Valid
+	@OneToOne(optional = true)
+	private Daring		daring;
 
 }

@@ -30,5 +30,8 @@
 	<acme:button code="worker.job.form.button.application.create" action="/acme-jobs/worker/application/create?jobId=${id}"/>
 	</jstl:if>
 	<acme:button code="worker.job.form.button.auditRecords" action="/acme-jobs/authenticated/audit-record/list?id=${id}"/>
+	<jstl:if test="${hasADaring}">
+  		<acme:button code="worker.job.form.button.daring" action="/acme-jobs/worker/daring/show?id=${daringId}"/>
+  	</jstl:if>
   	<acme:form-return code="worker.job.form.button.return"/>
 </acme:form>

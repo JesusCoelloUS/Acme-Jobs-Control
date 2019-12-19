@@ -32,6 +32,7 @@ employer.job.form.button.delete = Eliminar
 employer.job.form.button.duties = Deberes
 employer.job.form.button.duty.create = Nuevo deber
 employer.job.form.button.auditRecords = Registros de auditor
+employer.job.form.button.daring = Reto
 
 employer.job.error.spam = Este empleo es spam
 employer.job.error.duties = No puede guardarse en estado final un empleo hasta que sus deberes sumen 100%

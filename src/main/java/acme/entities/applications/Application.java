@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -16,6 +17,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.answers.Answer;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
@@ -64,5 +66,9 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Worker				worker;
+
+	@Valid
+	@OneToOne(optional = true)
+	private Answer				answer;
 
 }

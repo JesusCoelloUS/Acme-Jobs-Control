@@ -630,4 +630,106 @@
 		<property name="thread" ref="thread1auditor1"/>
 	</bean>
 	
+	<!-- Control check -->
+	
+	<bean id="job1employer1control" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB1c"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="title" value="Title 1 control"/>
+		<property name="deadline" value="2030/12/11 23:59"/>
+		<property name="salary" value="€ 5,000.98"/>
+		<property name="moreInfo" value="http://www.example.com"/>
+		<property name="description" value="Lorem ipsum sit dolor amet"/>
+		<property name="finalMode" value="true"/>
+		<property name="employer" ref="employer1Employer"/>
+		<property name="daring" ref="job1employer1controldaring"/>
+	</bean>
+	
+	<bean id="duty1job1control" class="acme.entities.duties.Duty">
+		<property name="title" value="Duty 1 of Job 1 control"/>
+		<property name="description" value="This is the description"/>
+		<property name="percentage" value="50"/>
+		<property name="job" ref="job1employer1control"/>
+	</bean>
+	
+	<bean id="duty2job1control" class="acme.entities.duties.Duty">
+		<property name="title" value="Duty 2 of Job 1 control"/>
+		<property name="description" value="This is the description"/>
+		<property name="percentage" value="50"/>
+		<property name="job" ref="job1employer1control"/>
+	</bean>
+	
+	<bean id="job1employer1controldaring" class="acme.entities.darings.Daring">
+		<property name="text" value="This is the text"/>
+		<property name="moreInfo" value="http://www.example.com"/>
+	</bean>
+	
+	<bean id="job2employer1control" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB2c"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="title" value="Title 2 control"/>
+		<property name="deadline" value="2020/12/11 23:59"/>
+		<property name="salary" value="€ 10,000.98"/>
+		<property name="moreInfo" value="http://www.example.com"/>
+		<property name="description" value="Lorem ipsum sit dolor amet"/>
+		<property name="finalMode" value="true"/>
+		<property name="employer" ref="employer1Employer"/>
+	</bean>
+	
+	<bean id="duty1job2control" class="acme.entities.duties.Duty">
+		<property name="title" value="Duty 1 of Job 2 control"/>
+		<property name="description" value="This is the description"/>
+		<property name="percentage" value="100"/>
+		<property name="job" ref="job2employer1control"/>
+	</bean>
+	
+	<bean id="application1worker1control" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-JOB1:WOR1c"/>
+		<property name="status" value="ACCEPTED"/>
+		<property name="rejectDecision" value=""/>
+		<property name="statement" value="Here is my statement"/>
+		<property name="creationMoment" value="2019/11/10 12:00"/>
+		<property name="skills" value="Here are my skills"/>
+		<property name="qualifications" value="Here are my qualifications"/>
+		<property name="job" ref="job1employer1control"/>
+		<property name="worker" ref="worker1Worker"/>
+		<property name="answer" ref="application1worker1controlanswer"/>
+	</bean>
+	
+	<bean id="application1worker1controlanswer" class="acme.entities.answers.Answer">
+		<property name="text" value="This is the text"/>
+		<property name="passwordProtected" value="true"/>
+		<property name="password" value="abd78a@?"/>
+	</bean>
+	
+	<bean id="application2worker1control" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-JOB1:WOR2c"/>
+		<property name="status" value="PENDING"/>
+		<property name="rejectDecision" value=""/>
+		<property name="statement" value="Here is my statement"/>
+		<property name="creationMoment" value="2019/11/10 12:00"/>
+		<property name="skills" value="Here are my skills"/>
+		<property name="qualifications" value="Here are my qualifications"/>
+		<property name="job" ref="job1employer1control"/>
+		<property name="worker" ref="worker1Worker"/>
+		<property name="answer" ref="application2worker1controlanswer"/>
+	</bean>
+	
+	<bean id="application2worker1controlanswer" class="acme.entities.answers.Answer">
+		<property name="text" value="This is the text"/>
+		<property name="passwordProtected" value="false"/>
+	</bean>
+	
+	<bean id="application3worker1control" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-JOB1:WOR3c"/>
+		<property name="status" value="REJECTED"/>
+		<property name="rejectDecision" value="This is the decision"/>
+		<property name="statement" value="Here is my statement"/>
+		<property name="creationMoment" value="2019/11/10 12:00"/>
+		<property name="skills" value="Here are my skills"/>
+		<property name="qualifications" value="Here are my qualifications"/>
+		<property name="job" ref="job1employer1control"/>
+		<property name="worker" ref="worker1Worker"/>
+	</bean>
+	
 </beans>

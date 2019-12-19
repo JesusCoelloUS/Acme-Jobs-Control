@@ -33,5 +33,8 @@
 		<acme:button code="authenticated.job.form.button.audit-record.create" action="/acme-jobs/auditor/audit-record/create?jobId=${id}"/>
 	</security:authorize>
 	
+	<jstl:if test="${hasADaring}">
+  		<acme:button code="authenticated.job.form.button.daring" action="/acme-jobs/authenticated/daring/show?id=${daringId}"/>
+  	</jstl:if>
   	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>
