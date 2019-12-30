@@ -38,6 +38,12 @@
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills" readonly="${option}"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" readonly="${option}"/>
 	
+	<jstl:if test="${hasDaring}">
+		<acme:form-textarea code="worker.application.form.label.answer.text" path="answerText" readonly="${option}"/>
+		<acme:form-checkbox code="worker.application.form.label.answer.passwordProtected" path="answerPasswordProtected" readonly="${option}"/>
+		<acme:form-textbox code="worker.application.form.label.answer.password" path="answerPassword" readonly="${option}"/>
+	</jstl:if>
+	
 	<jstl:if test="${command != 'create'}">
 	<acme:button code="worker.application.form.button.job" action="/acme-jobs/worker/job/show?id=${jobId }"/>
 	</jstl:if>

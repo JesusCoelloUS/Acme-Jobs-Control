@@ -13,5 +13,8 @@ administrator.configuration.list.label.threshold = Threshold
 
 administrator.configuration.form.label.spamWords = Spam words
 administrator.configuration.form.label.threshold = Threshold
+administrator.configuration.form.label.ratioOfJobsThatHaveADaring = Ratio of jobs that have a daring
+administrator.configuration.form.label.rationOfApplicationsThatHaveAnAnswer = Ratio of applications that have an answer
+administrator.configuration.form.label.rationOfApplicationsThatHaveAPasswordProtectedAnswer = Ratio of applications that have a password protected answer
 administrator.configuration.form.button.update = Update
 administrator.configuration.form.button.return = Return
