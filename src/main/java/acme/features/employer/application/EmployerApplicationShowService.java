@@ -41,6 +41,10 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		assert model != null;
 		request.unbind(entity, model, "reference", "status", "rejectDecision", "statement", "creationMoment", "skills", "qualifications");
 		model.setAttribute("jobId", entity.getJob().getId());
+		if (entity.getAnswer() != null) {
+			model.setAttribute("hasAnswer", true);
+			model.setAttribute("answerId", entity.getAnswer().getId());
+		}
 	}
 
 	@Override

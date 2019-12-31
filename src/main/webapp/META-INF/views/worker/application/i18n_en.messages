@@ -23,6 +23,7 @@ worker.application.form.label.answer.text = Text
 worker.application.form.label.answer.passwordProtected = Password protected
 worker.application.form.label.answer.password = Password
 worker.application.form.button.job = Job
+worker.application.form.button.answer = Answer
 worker.application.form.button.return = Return
 worker.application.form.button.create = Apply
 

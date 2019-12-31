@@ -24,6 +24,7 @@ employer.application.form.label.creationMoment = Creation Moment
 employer.application.form.label.skills = Skills
 employer.application.form.label.qualifications = Qualifications
 employer.application.form.button.job = Job
+employer.application.form.button.answer = Answer
 employer.application.form.button.return = Return
 employer.application.form.button.update = Update
 

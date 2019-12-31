@@ -48,6 +48,10 @@
 	<acme:button code="worker.application.form.button.job" action="/acme-jobs/worker/job/show?id=${jobId }"/>
 	</jstl:if>
 	
+	<jstl:if test="${hasAnswer}">
+		<acme:button code="worker.application.form.button.answer" action="/acme-jobs/worker/answer/show?id=${answerId}"/>
+	</jstl:if>
+	
 	<acme:form-submit test="${command == 'create' }" code="worker.application.form.button.create" action="/worker/application/create?jobId=${id}"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>
