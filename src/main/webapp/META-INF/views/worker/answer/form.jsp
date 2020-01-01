@@ -20,5 +20,23 @@
 	<acme:form-textarea code="worker.answer.form.label.text" path="text"/>
 	<acme:form-textbox code="worker.answer.form.label.passwordProtected" path="passwordProtected"/>
 	<acme:form-textbox code="worker.answer.form.label.password" path="password"/>
-  	<acme:form-return code="worker.answer.form.button.return"/>
 </acme:form>
+
+<jstl:if test="${isProtected}">
+	<acme:input code="worker.answer.form.label.enterPassword" path="enterPassword" group="input"/><acme:button id="button" code="worker.answer.form.button.show"/>
+	<script>
+		$(document).ready(function(){
+			$("#form").hide();
+			$("#button").click(function(){
+				var enterPassword = $("#enterPassword").val();
+				var password = $("#password").val();
+				if(enterPassword == password){
+					$("#form").show();
+					$("#input").hide();
+					$("#button").hide();
+				}
+			});
+		});
+	</script>
+</jstl:if>
+<acme:form-return code="worker.answer.form.button.return"/>

@@ -12,3 +12,5 @@ worker.answer.form.label.text = Text
 worker.answer.form.label.passwordProtected = Password protected
 worker.answer.form.label.password = Password
 worker.answer.form.button.return = Return
+worker.answer.form.button.show = Show
+worker.answer.form.label.enterPassword = Enter password

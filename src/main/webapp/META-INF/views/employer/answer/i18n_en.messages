@@ -12,3 +12,5 @@ employer.answer.form.label.text = Text
 employer.answer.form.label.passwordProtected = Password protected
 employer.answer.form.label.password = Password
 employer.answer.form.button.return = Return
+worker.answer.form.button.show = Show
+employer.answer.form.label.enterPassword = Enter password

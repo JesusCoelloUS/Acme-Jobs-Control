@@ -35,6 +35,7 @@ public class WorkerAnswerShowService implements AbstractShowService<Worker, Answ
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "text", "passwordProtected", "password");
+		model.setAttribute("isProtected", entity.getPasswordProtected());
 	}
 
 	@Override

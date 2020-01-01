@@ -331,7 +331,7 @@
 	
 	<bean id="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Challenge01's title"/>
-		<property name="deadline" value="2020/01/01 00:00"/>
+		<property name="deadline" value="2020/06/01 00:00"/>
 		<property name="description" value="This is the description"/>
 		<property name="goldReward" value="200"/>
 		<property name="silverReward" value="150"/>
@@ -343,7 +343,7 @@
 	
 	<bean id="challenge02" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Challenge02's title"/>
-		<property name="deadline" value="2020/02/01 00:00"/>
+		<property name="deadline" value="2020/06/01 00:00"/>
 		<property name="description" value="This is the description"/>
 		<property name="goldReward" value="300"/>
 		<property name="silverReward" value="200"/>
@@ -683,6 +683,31 @@
 		<property name="job" ref="job2employer1control"/>
 	</bean>
 	
+	<bean id="job3employer1control" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB3c"/>
+		<property name="status" value="DRAFT"/>
+		<property name="title" value="Title 3 control"/>
+		<property name="deadline" value="2020/12/11 23:59"/>
+		<property name="salary" value="€ 10,000.98"/>
+		<property name="moreInfo" value="http://www.example.com"/>
+		<property name="description" value="Lorem ipsum sit dolor amet"/>
+		<property name="finalMode" value="false"/>
+		<property name="employer" ref="employer1Employer"/>
+		<property name="daring" ref="job3employer1controldaring"/>
+	</bean>
+	
+	<bean id="duty1job3control" class="acme.entities.duties.Duty">
+		<property name="title" value="Duty 1 of Job 3 control"/>
+		<property name="description" value="This is the description"/>
+		<property name="percentage" value="100"/>
+		<property name="job" ref="job3employer1control"/>
+	</bean>
+	
+	<bean id="job3employer1controldaring" class="acme.entities.darings.Daring">
+		<property name="text" value="This is the text"/>
+		<property name="moreInfo" value="http://www.example.com"/>
+	</bean>
+	
 	<bean id="application1worker1control" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB1:WOR1c"/>
 		<property name="status" value="ACCEPTED"/>
@@ -699,7 +724,7 @@
 	<bean id="application1worker1controlanswer" class="acme.entities.answers.Answer">
 		<property name="text" value="This is the text"/>
 		<property name="passwordProtected" value="true"/>
-		<property name="password" value="abd78a@?"/>
+		<property name="password" value="a1d78a@?"/>
 	</bean>
 	
 	<bean id="application2worker1control" class="acme.entities.applications.Application">
