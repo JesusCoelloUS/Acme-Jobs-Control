@@ -52,8 +52,10 @@
 	
 	<jstl:if test="${command != 'create' }">
 		<acme:button code="employer.job.form.button.duties" action="/acme-jobs/employer/duty/list?id=${id}"/>
-		<acme:button code="employer.job.form.button.duty.create" action="/acme-jobs/employer/duty/create?id=${id}"/>
 		<acme:button code="employer.job.form.button.auditRecords" action="/acme-jobs/authenticated/audit-record/list?id=${id}"/>
+		<jstl:if test="${canBeUpdated}">
+			<acme:button code="employer.job.form.button.duty.create" action="/acme-jobs/employer/duty/create?id=${id}"/>
+		</jstl:if>
 		<jstl:if test="${hasADaring}">
   			<acme:button code="employer.job.form.button.daring" action="/acme-jobs/employer/daring/show?id=${daringId}"/>
   		</jstl:if>
