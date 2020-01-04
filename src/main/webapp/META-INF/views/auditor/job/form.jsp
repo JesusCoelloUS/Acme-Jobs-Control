@@ -28,8 +28,5 @@
 	<acme:button code="auditor.job.form.button.duties" action="/acme-jobs/auditor/duty/list?id=${id}"/>
 	<acme:button code="auditor.job.form.button.audit-record.create" action="/acme-jobs/auditor/audit-record/create?jobId=${id}"/>
 	<acme:button code="auditor.job.form.button.auditRecords" action="/acme-jobs/authenticated/audit-record/list?id=${id}"/>
-  	<jstl:if test="${hasADaring}">
-  		<acme:button code="auditor.job.form.button.daring" action="/acme-jobs/auditor/daring/show?id=${daringId}"/>
-  	</jstl:if>
   	<acme:form-return code="auditor.job.form.button.return"/>
 </acme:form>
