@@ -27,16 +27,29 @@
 	<script>
 		$(document).ready(function(){
 			$("#form").hide();
-			$("#button").click(function(){
-				var enterPassword = $("#enterPassword").val();
-				var password = $("#password").val();
-				if(enterPassword == password){
-					$("#form").show();
-					$("#input").hide();
-					$("#button").hide();
-				}
-			});
 		});
+		
+		$("#button").click(function(){
+			mostrar();
+		});
+		
+		$("#enterPassword").keypress(function(e){
+			if(e.which == 13){
+				mostrar();
+			}
+		});
+		
+		function mostrar(){
+			var enterPassword = $("#enterPassword").val();
+			var password = $("#password").val();
+			if(enterPassword == password){
+				$("#form").show();
+				$("#input").hide();
+				$("#button").hide();
+			}else{
+				alert("<acme:message code='worker.answer.form.label.enterPassword.error'/>");
+			}
+		}
 	</script>
 </jstl:if>
 <acme:form-return code="worker.answer.form.button.return"/>

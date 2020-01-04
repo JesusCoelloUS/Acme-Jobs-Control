@@ -55,6 +55,6 @@
 	<jstl:if test="${hasAnswer}">
 		<acme:button code="employer.application.form.button.answer" action="/acme-jobs/employer/answer/show?id=${answerId}"/>
 	</jstl:if>
-	<acme:form-submit test="${status == 'PENDING'}" code="employer.application.form.button.update" action="/employer/application/update"/>
+	<acme:form-submit test="${status == 'PENDING' || (status == 'REJECTED' && rejectDecision == '') || (status == 'ACCEPTED' && rejectDecision != '')}" code="employer.application.form.button.update" action="/employer/application/update"/>
 	<acme:form-return code="employer.application.form.button.return"/>
 </acme:form>

@@ -14,3 +14,4 @@ worker.answer.form.label.password = Contraseña
 worker.answer.form.button.return = Volver
 worker.answer.form.button.show = Mostrar
 worker.answer.form.label.enterPassword = Introduzca contraseña
+worker.answer.form.label.enterPassword.error = Contraseña incorrecta
