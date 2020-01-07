@@ -642,7 +642,7 @@
 		<property name="description" value="Lorem ipsum sit dolor amet"/>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="daring" ref="job1employer1controldaring"/>
+		<property name="bisit" ref="job1employer1controlbisit"/>
 	</bean>
 	
 	<bean id="duty1job1control" class="acme.entities.duties.Duty">
@@ -659,9 +659,9 @@
 		<property name="job" ref="job1employer1control"/>
 	</bean>
 	
-	<bean id="job1employer1controldaring" class="acme.entities.darings.Daring">
+	<bean id="job1employer1controlbisit" class="acme.entities.bisits.Bisit">
 		<property name="text" value="This is the text"/>
-		<property name="moreInfo" value="http://www.example.com"/>
+		<property name="tracer" value="http://www.example.com"/>
 	</bean>
 	
 	<bean id="job2employer1control" class="acme.entities.jobs.Job">
@@ -693,7 +693,7 @@
 		<property name="description" value="Lorem ipsum sit dolor amet"/>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="daring" ref="job3employer1controldaring"/>
+		<property name="bisit" ref="job3employer1controlbisit"/>
 	</bean>
 	
 	<bean id="duty1job3control" class="acme.entities.duties.Duty">
@@ -703,9 +703,9 @@
 		<property name="job" ref="job3employer1control"/>
 	</bean>
 	
-	<bean id="job3employer1controldaring" class="acme.entities.darings.Daring">
+	<bean id="job3employer1controlbisit" class="acme.entities.bisits.Bisit">
 		<property name="text" value="This is the text"/>
-		<property name="moreInfo" value="http://www.example.com"/>
+		<property name="tracer" value="http://www.example.com"/>
 	</bean>
 	
 	<bean id="application1worker1control" class="acme.entities.applications.Application">
@@ -718,13 +718,9 @@
 		<property name="qualifications" value="Here are my qualifications"/>
 		<property name="job" ref="job1employer1control"/>
 		<property name="worker" ref="worker1Worker"/>
-		<property name="answer" ref="application1worker1controlanswer"/>
-	</bean>
-	
-	<bean id="application1worker1controlanswer" class="acme.entities.answers.Answer">
-		<property name="text" value="This is the text"/>
+		<property name="tracer" value="http://www.example.com"/>
 		<property name="passwordProtected" value="true"/>
-		<property name="password" value="a1d78a@?"/>
+		<property name="password" value="aaaaaaaa1?"/>
 	</bean>
 	
 	<bean id="application2worker1control" class="acme.entities.applications.Application">
@@ -737,11 +733,7 @@
 		<property name="qualifications" value="Here are my qualifications"/>
 		<property name="job" ref="job1employer1control"/>
 		<property name="worker" ref="worker1Worker"/>
-		<property name="answer" ref="application2worker1controlanswer"/>
-	</bean>
-	
-	<bean id="application2worker1controlanswer" class="acme.entities.answers.Answer">
-		<property name="text" value="This is the text"/>
+		<property name="tracer" value="http://www.example.com"/>
 		<property name="passwordProtected" value="false"/>
 	</bean>
 	

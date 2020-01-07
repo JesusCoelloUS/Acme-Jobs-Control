@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.darings.Daring;
+import acme.entities.bisits.Bisit;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -78,6 +78,6 @@ public class Job extends DomainEntity {
 
 	@Valid
 	@OneToOne(optional = true)
-	private Daring		daring;
+	private Bisit		bisit;
 
 }

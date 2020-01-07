@@ -45,9 +45,9 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		if (!entity.getFinalMode()) {
 			model.setAttribute("canBeUpdated", true);
 		}
-		if (entity.getDaring() != null) {
-			model.setAttribute("hasADaring", true);
-			model.setAttribute("daringId", entity.getDaring().getId());
+		if (entity.getBisit() != null) {
+			model.setAttribute("hasABisit", true);
+			model.setAttribute("bisitId", entity.getBisit().getId());
 		}
 	}
 

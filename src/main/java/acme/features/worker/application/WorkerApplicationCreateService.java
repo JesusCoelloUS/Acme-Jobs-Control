@@ -6,11 +6,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.answers.Answer;
 import acme.entities.applications.Application;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
-import acme.features.worker.answer.WorkerAnswerRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -21,9 +19,7 @@ import acme.framework.services.AbstractCreateService;
 public class WorkerApplicationCreateService implements AbstractCreateService<Worker, Application> {
 
 	@Autowired
-	WorkerApplicationRepository	repository;
-	@Autowired
-	WorkerAnswerRepository		answerRepository;
+	WorkerApplicationRepository repository;
 
 
 	@Override
@@ -47,14 +43,14 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert model != null;
 		request.unbind(entity, model, "reference", "statement", "skills", "qualifications");
 		model.setAttribute("id", entity.getJob().getId());
-		if (entity.getJob().getDaring() != null) {
-			model.setAttribute("hasDaring", true);
+		if (entity.getJob().getBisit() != null) {
+			model.setAttribute("hasBisit", true);
 			if (request.isMethod(HttpMethod.GET)) {
-				model.setAttribute("answerText", "");
-				model.setAttribute("answerPasswordProtected", false);
-				model.setAttribute("answerPassword", "");
+				model.setAttribute("tracer", "");
+				model.setAttribute("passwordProtected", false);
+				model.setAttribute("password", "");
 			} else {
-				request.transfer(model, "answerText", "answerPasswordProtected", "answerPassword");
+				request.transfer(model, "tracer", "passwordProtected", "password");
 			}
 		}
 	}
@@ -78,20 +74,25 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		if (entity.getJob().getDaring() != null) {
-			request.getModel().setAttribute("hasDaring", true);
-			String text = request.getModel().getString("answerText");
-			errors.state(request, !text.equals(""), "answerText", "worker.application.error.text");
-			Boolean passwordProtected = request.getModel().getBoolean("answerPasswordProtected");
-			if (passwordProtected) {
-				String password = request.getModel().getString("answerPassword");
-				errors.state(request, this.checkPassword(password), "answerPassword", "worker.application.error.password");
+		if (entity.getJob().getBisit() != null) {
+			request.getModel().setAttribute("hasBisit", true);
+			if (!entity.getTracer().equals("")) {
+				Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
+				if (passwordProtected) {
+					String password = request.getModel().getString("password");
+					errors.state(request, this.checkPassword(password), "password", "worker.application.error.password");
+				}
+			} else if (entity.getPasswordProtected().equals(true) || !entity.getPassword().equals("")) {
+				errors.state(request, false, "tracer", "worker.application.error.tracer");
+			}
+			if (!entity.getPassword().equals("")) {
+				errors.state(request, this.checkPassword(entity.getPassword()), "password", "worker.application.error.password");
 			}
 		}
 	}
 
 	private boolean checkPassword(final String password) {
-		if (password.length() < 8) {
+		if (password.length() < 10) {
 			return false;
 		}
 		int letters = 0;
@@ -106,23 +107,22 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 				symbols++;
 			}
 		}
-		return letters >= 3 && digits >= 3 && symbols >= 2;
+		return letters >= 1 && digits >= 1 && symbols >= 1;
 	}
 
 	@Override
 	public void create(final Request<Application> request, final Application entity) {
 		assert request != null;
 		assert entity != null;
-		if (entity.getJob().getDaring() != null) {
-			String answerText = request.getModel().getString("answerText");
-			Boolean answerPasswordProtected = request.getModel().getBoolean("answerPasswordProtected");
-			String answerPassword = request.getModel().getString("answerPassword");
-			Answer answer = new Answer();
-			answer.setText(answerText);
-			answer.setPasswordProtected(answerPasswordProtected);
-			answer.setPassword(answerPassword);
-			Answer saved = this.answerRepository.save(answer);
-			entity.setAnswer(saved);
+		if (entity.getJob().getBisit() != null) {
+			String tracer = request.getModel().getString("tracer");
+			if (!tracer.equals("")) {
+				Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
+				String password = request.getModel().getString("password");
+				entity.setTracer(tracer);
+				entity.setPasswordProtected(passwordProtected);
+				entity.setPassword(password);
+			}
 		}
 		this.repository.save(entity);
 	}

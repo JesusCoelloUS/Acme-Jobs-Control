@@ -38,20 +38,56 @@
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills" readonly="${option}"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" readonly="${option}"/>
 	
-	<jstl:if test="${hasDaring}">
-		<acme:form-textarea code="worker.application.form.label.answer.text" path="answerText" readonly="${option}"/>
-		<acme:form-checkbox code="worker.application.form.label.answer.passwordProtected" path="answerPasswordProtected" readonly="${option}"/>
-		<acme:form-textbox code="worker.application.form.label.answer.password" path="answerPassword" readonly="${option}"/>
+	<jstl:if test="${hasBisit}">
+		<acme:form-url code="worker.application.form.label.tracer" path="tracer" readonly="${option}"/>
+		<acme:form-checkbox code="worker.application.form.label.passwordProtected" path="passwordProtected" readonly="${option}"/>
+		<acme:form-textbox code="worker.application.form.label.password" path="password" readonly="${option}"/>
 	</jstl:if>
 	
-	<jstl:if test="${command != 'create'}">
-	<acme:button code="worker.application.form.button.job" action="/acme-jobs/worker/job/show?id=${jobId }"/>
-	</jstl:if>
-	
-	<jstl:if test="${hasAnswer}">
-		<acme:button code="worker.application.form.button.answer" action="/acme-jobs/worker/answer/show?id=${answerId}"/>
+	<jstl:if test="${hasTracer}">
+		<acme:form-url code="worker.application.form.label.tracer" path="tracer" readonly="true"/>
+		<jstl:if test="${password != ''}">
+			<acme:form-textbox code="worker.application.form.label.password" path="password" readonly="true"/>
+		</jstl:if>
 	</jstl:if>
 	
 	<acme:form-submit test="${command == 'create' }" code="worker.application.form.button.create" action="/worker/application/create?jobId=${id}"/>
-	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>
+
+<jstl:if test="${isProtected}">
+	<acme:input code="worker.form.label.enterPassword" path="enterPassword" group="input"/><acme:button id="button" code="worker.form.button.show"/>
+	<script>
+		$(document).ready(function(){
+			$("#tracer").hide();
+			$("#password").hide();
+		});
+		
+		$("#button").click(function(){
+			mostrar();
+		});
+		
+		$("#enterPassword").keypress(function(e){
+			if(e.which == 13){
+				mostrar();
+			}
+		});
+		
+		function mostrar(){
+			var enterPassword = $("#enterPassword").val();
+			var password = $("#password").val();
+			if(enterPassword == password){
+				$("#tracer").show();
+				$("#password").show();
+				$("#input").hide();
+				$("#button").hide();
+			}else{
+				alert("<acme:message code='worker.form.label.enterPassword.error'/>");
+			}
+		}
+	</script>
+</jstl:if>
+
+<jstl:if test="${command != 'create'}">
+	<acme:button code="worker.application.form.button.job" action="/acme-jobs/worker/job/show?id=${jobId }"/>
+</jstl:if>
+<acme:form-return code="worker.application.form.button.return"/>

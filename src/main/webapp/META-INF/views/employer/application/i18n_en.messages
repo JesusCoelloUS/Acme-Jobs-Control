@@ -23,10 +23,15 @@ employer.application.form.label.statement = Statement
 employer.application.form.label.creationMoment = Creation Moment
 employer.application.form.label.skills = Skills
 employer.application.form.label.qualifications = Qualifications
+employer.application.form.label.tracer = Tracer
+employer.application.form.label.password = Password
 employer.application.form.button.job = Job
-employer.application.form.button.answer = Answer
 employer.application.form.button.return = Return
 employer.application.form.button.update = Update
+
+employer.form.label.enterPassword = Enter password
+employer.form.button.show = Show
+employer.form.label.enterPassword.error = Wrong password
 
 employer.application.error.rejectDecision = Rejected applications require a decision
 employer.application.error.otherDecision = Only rejected applications require a decision

@@ -13,8 +13,8 @@ administrator.configuration.list.label.threshold = Umbral
 
 administrator.configuration.form.label.spamWords = Palabras spam
 administrator.configuration.form.label.threshold = Umbral
-administrator.configuration.form.label.ratioOfJobsThatHaveADaring = Porcentaje de empleos con reto
-administrator.configuration.form.label.rationOfApplicationsThatHaveAnAnswer = Porcentaje de solicitudes con respuesta
-administrator.configuration.form.label.rationOfApplicationsThatHaveAPasswordProtectedAnswer = Porcentaje de solicitudes con respuesta protegida con contraseña
+administrator.configuration.form.label.ratioOfJobsThatHaveABisit = Porcentaje de empleos con bisit
+administrator.configuration.form.label.ratioOfBisitsThatHaveATracer = Porcentaje de bisits con tracer
+administrator.configuration.form.label.ratioOfApplicationsThatHaveAPasswordProtectedTracer = Porcentaje de solicitudes con tracer protegido con contraseña
 administrator.configuration.form.button.update = Actualizar
 administrator.configuration.form.button.return = Volver

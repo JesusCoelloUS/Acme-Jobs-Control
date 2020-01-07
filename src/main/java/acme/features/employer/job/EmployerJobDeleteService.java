@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.darings.Daring;
+import acme.entities.bisits.Bisit;
 import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
@@ -24,7 +24,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 	@Autowired
 	EmployerDutyRepository	dutyRepository;
 	@Autowired
-	EmployerDutyRepository	daringRepository;
+	EmployerDutyRepository	BisitRepository;
 
 
 	@Override
@@ -72,9 +72,9 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 			d.setJob(null);
 			this.dutyRepository.delete(d);
 		}
-		Daring daring = entity.getDaring();
-		entity.setDaring(null);
-		this.daringRepository.delete(daring);
+		Bisit Bisit = entity.getBisit();
+		entity.setBisit(null);
+		this.BisitRepository.delete(Bisit);
 
 		this.repository.delete(entity);
 	}

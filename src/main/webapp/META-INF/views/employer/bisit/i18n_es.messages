@@ -1,0 +1,16 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not job any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+employer.bisit.form.label.text = Texto
+employer.bisit.form.label.tracer = Tracer
+employer.bisit.form.button.create = Crear
+employer.bisit.form.button.update = Editar
+employer.bisit.form.button.delete = Eliminar
+employer.bisit.form.button.return = Volver

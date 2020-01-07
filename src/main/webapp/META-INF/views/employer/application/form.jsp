@@ -51,10 +51,47 @@
 	<acme:form-textarea code="employer.application.form.label.skills" path="skills" readonly="true"/>
 	<acme:form-textarea code="employer.application.form.label.qualifications" path="qualifications" readonly="true"/>
 	
-	<acme:button code="employer.application.form.button.job" action="/acme-jobs/employer/job/show?id=${jobId }"/>
-	<jstl:if test="${hasAnswer}">
-		<acme:button code="employer.application.form.button.answer" action="/acme-jobs/employer/answer/show?id=${answerId}"/>
+	<jstl:if test="${hasTracer}">
+		<acme:form-url code="employer.application.form.label.tracer" path="tracer" readonly="true"/>
+		<acme:form-textbox code="employer.application.form.label.password" path="password" readonly="true"/>
 	</jstl:if>
+	
 	<acme:form-submit test="${status == 'PENDING' || (status == 'REJECTED' && rejectDecision == '') || (status == 'ACCEPTED' && rejectDecision != '')}" code="employer.application.form.button.update" action="/employer/application/update"/>
-	<acme:form-return code="employer.application.form.button.return"/>
 </acme:form>
+
+<jstl:if test="${isProtected}">
+	<acme:input code="employer.form.label.enterPassword" path="enterPassword" group="input"/><acme:button id="button" code="employer.form.button.show"/>
+
+	<script>
+		$(document).ready(function(){
+			$("#tracer").hide();
+			$("#password").hide();
+		});
+		
+		$("#button").click(function(){
+			mostrar();
+		});
+		
+		$("#enterPassword").keypress(function(e){
+			if(e.which == 13){
+				mostrar();
+			}
+		});
+		
+		function mostrar(){
+			var enterPassword = $("#enterPassword").val();
+			var password = $("#password").val();
+			if(enterPassword == password){
+				$("#tracer").show();
+				$("#password").show();
+				$("#input").hide();
+				$("#button").hide();
+			}else{
+				alert("<acme:message code='worker.form.label.enterPassword.error'/>");
+			}
+		}
+	</script>
+</jstl:if>
+
+<acme:button code="employer.application.form.button.job" action="/acme-jobs/employer/job/show?id=${jobId }"/>
+<acme:form-return code="employer.application.form.button.return"/>

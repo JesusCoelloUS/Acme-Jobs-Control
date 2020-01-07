@@ -38,9 +38,9 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		assert model != null;
 		request.unbind(entity, model, "id", "reference", "title", "status", "deadline", "moreInfo", "salary", "description");
 		model.setAttribute("isActive", entity.isActive());
-		if (entity.getDaring() != null) {
-			model.setAttribute("hasADaring", true);
-			model.setAttribute("daringId", entity.getDaring().getId());
+		if (entity.getBisit() != null) {
+			model.setAttribute("hasABisit", true);
+			model.setAttribute("bisitId", entity.getBisit().getId());
 		}
 	}
 
