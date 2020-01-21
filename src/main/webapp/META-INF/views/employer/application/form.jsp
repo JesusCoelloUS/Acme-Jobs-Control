@@ -53,7 +53,9 @@
 	
 	<jstl:if test="${hasTracer}">
 		<acme:form-url code="employer.application.form.label.tracer" path="tracer" readonly="true"/>
-		<acme:form-textbox code="employer.application.form.label.password" path="password" readonly="true"/>
+		<jstl:if test="${isProtected}">
+			<acme:form-textbox code="employer.application.form.label.password" path="password" readonly="true"/>
+		</jstl:if>
 	</jstl:if>
 	
 	<acme:form-submit test="${status == 'PENDING' || (status == 'REJECTED' && rejectDecision == '') || (status == 'ACCEPTED' && rejectDecision != '')}" code="employer.application.form.button.update" action="/employer/application/update"/>

@@ -46,7 +46,7 @@
 	
 	<jstl:if test="${hasTracer}">
 		<acme:form-url code="worker.application.form.label.tracer" path="tracer" readonly="true"/>
-		<jstl:if test="${password != ''}">
+		<jstl:if test="${isProtected}">
 			<acme:form-textbox code="worker.application.form.label.password" path="password" readonly="true"/>
 		</jstl:if>
 	</jstl:if>

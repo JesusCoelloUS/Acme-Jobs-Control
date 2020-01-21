@@ -1,6 +1,7 @@
 
 package acme.features.worker.application;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,21 +75,33 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		errors.state(request, this.checkReference(entity), "reference", "worker.application.error.reference");
 		if (entity.getJob().getBisit() != null) {
 			request.getModel().setAttribute("hasBisit", true);
-			if (!entity.getTracer().equals("")) {
-				Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
+			String tracer = request.getModel().getString("tracer");
+			Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
+			String password = request.getModel().getString("password");
+			if (!tracer.equals("") || passwordProtected || !password.equals("")) {
+				errors.state(request, !tracer.equals(""), "tracer", "worker.application.error.tracer");
 				if (passwordProtected) {
-					String password = request.getModel().getString("password");
 					errors.state(request, this.checkPassword(password), "password", "worker.application.error.password");
 				}
-			} else if (entity.getPasswordProtected().equals(true) || !entity.getPassword().equals("")) {
-				errors.state(request, false, "tracer", "worker.application.error.tracer");
-			}
-			if (!entity.getPassword().equals("")) {
-				errors.state(request, this.checkPassword(entity.getPassword()), "password", "worker.application.error.password");
+				if (!password.equals("")) {
+					errors.state(request, passwordProtected, "passwordProtected", "worker.application.error.passwordProtected");
+					errors.state(request, this.checkPassword(password), "password", "worker.application.error.password");
+				}
 			}
 		}
+	}
+
+	private boolean checkReference(final Application app) {
+		Collection<Application> all = this.repository.findAllApplications();
+		for (Application a : all) {
+			if (app.getReference().equals(a.getReference())) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private boolean checkPassword(final String password) {
@@ -116,12 +129,20 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		if (entity.getJob().getBisit() != null) {
 			String tracer = request.getModel().getString("tracer");
-			if (!tracer.equals("")) {
-				Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
-				String password = request.getModel().getString("password");
+			Boolean passwordProtected = request.getModel().getBoolean("passwordProtected");
+			String password = request.getModel().getString("password");
+			if (!tracer.equals("") || passwordProtected || !password.equals("")) {
 				entity.setTracer(tracer);
 				entity.setPasswordProtected(passwordProtected);
-				entity.setPassword(password);
+				if (passwordProtected) {
+					entity.setPassword(password);
+				} else {
+					entity.setPassword(null);
+				}
+			} else {
+				entity.setTracer(null);
+				entity.setPasswordProtected(null);
+				entity.setPassword(null);
 			}
 		}
 		this.repository.save(entity);

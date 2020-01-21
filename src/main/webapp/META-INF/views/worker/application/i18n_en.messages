@@ -29,5 +29,7 @@ worker.form.label.enterPassword = Enter password
 worker.form.button.show = Show
 worker.form.label.enterPassword.error = Wrong password
 
+worker.application.error.reference = That application already exists
 worker.application.error.tracer = Must not be blank
+worker.application.error.passwordProtected = If you introduce a password, application must be password protected.
 worker.application.error.password = Password must have a minimum length of ten characters and must include a letter, a digit and a punctuation symbol.

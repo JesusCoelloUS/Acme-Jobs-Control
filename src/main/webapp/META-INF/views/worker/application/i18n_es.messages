@@ -29,5 +29,7 @@ worker.form.label.enterPassword = Introducir contraseña
 worker.form.button.show = Mostrar
 worker.form.label.enterPassword.error = Contraseña incorrecta
 
+worker.application.error.reference = La solicitud ya existe
 worker.application.error.tracer = No debe estar en blanco
+worker.application.error.passwordProtected = Si introduces una contraseña, la solicitud debe estar protegida con contraseña
 worker.application.error.password = La contraseña debe tener una longitud mínima de diez caracteres y debe contener al menos una letra, un número y un signo de puntuación.
