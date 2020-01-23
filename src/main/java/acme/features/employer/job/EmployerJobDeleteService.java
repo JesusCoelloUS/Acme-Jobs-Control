@@ -72,9 +72,11 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 			d.setJob(null);
 			this.dutyRepository.delete(d);
 		}
-		Bisit Bisit = entity.getBisit();
-		entity.setBisit(null);
-		this.BisitRepository.delete(Bisit);
+		if(entity.getBisit() != null){
+			Bisit Bisit = entity.getBisit();
+			entity.setBisit(null);
+			this.BisitRepository.delete(Bisit);
+		}
 
 		this.repository.delete(entity);
 	}
