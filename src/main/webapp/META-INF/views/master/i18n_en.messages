@@ -68,6 +68,7 @@ master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.shutdown = Shut down
 master.menu.administrator.configuration = Configuration
+master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.announcement.list.administrator = List of announcements (administrator)
 master.menu.administrator.investor-record.create = New investor record
 master.menu.administrator.company-record.create = New company record

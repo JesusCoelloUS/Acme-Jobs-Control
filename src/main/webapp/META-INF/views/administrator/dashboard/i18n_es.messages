@@ -8,10 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.configuration.list.label.spamWords = Palabras spam
-administrator.configuration.list.label.threshold = Umbral
+administrator.dashboard.form.title.dashboard = Dashboard
 
-administrator.configuration.form.label.spamWords = Palabras spam
-administrator.configuration.form.label.threshold = Umbral
-administrator.configuration.form.button.update = Actualizar
-administrator.configuration.form.button.return = Volver
+administrator.dashboard.form.label.ratioOfJobsThatHaveABisit = Empleos con bisit
+administrator.dashboard.form.label.ratioOfBisitsThatHaveATracer = Bisits con tracer
+administrator.dashboard.form.label.ratioOfApplicationsThatHaveAPasswordProtectedTracer = Solicitudes con tracer protegido

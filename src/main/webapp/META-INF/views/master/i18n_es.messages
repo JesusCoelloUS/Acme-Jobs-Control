@@ -68,6 +68,7 @@ master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.configuration = Configuración
+master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.announcement.list.administrator = Ver anuncios (administrador)
 master.menu.administrator.investor-record.create = Nuevo informe de inversor
 master.menu.administrator.announcement.create = Nuevo anuncio

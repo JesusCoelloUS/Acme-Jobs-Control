@@ -29,9 +29,6 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "spamWords", "threshold");
-		model.setAttribute("ratioOfJobsThatHaveABisit", this.repository.findRatioOfJobsThatHaveABisit());
-		model.setAttribute("ratioOfBisitsThatHaveATracer", this.repository.findRatioOfBisitsThatHaveATracer());
-		model.setAttribute("ratioOfApplicationsThatHaveAPasswordProtectedTracer", this.repository.findRatioOfApplicationsThatHaveAPasswordProtectedTracer());
 	}
 
 	@Override
