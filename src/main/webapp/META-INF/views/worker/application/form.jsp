@@ -55,7 +55,7 @@
 </acme:form>
 
 <jstl:if test="${isProtected}">
-	<acme:input code="worker.form.label.enterPassword" path="enterPassword" group="input"/><acme:button id="button" code="worker.form.button.show"/>
+	<acme:input type="password" code="worker.form.label.enterPassword" path="enterPassword" group="input"/><acme:button id="button" code="worker.form.button.show"/>
 	<script>
 		$(document).ready(function(){
 			$("#tracer").hide();

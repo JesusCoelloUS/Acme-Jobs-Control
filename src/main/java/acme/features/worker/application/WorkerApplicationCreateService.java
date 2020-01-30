@@ -88,7 +88,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 				}
 				if (!password.equals("")) {
 					errors.state(request, passwordProtected, "passwordProtected", "worker.application.error.passwordProtected");
-					errors.state(request, this.checkPassword(password), "password", "worker.application.error.password");
+					if (!passwordProtected) {
+						errors.state(request, this.checkPassword(password), "password", "worker.application.error.password");
+					}
 				}
 			}
 		}
