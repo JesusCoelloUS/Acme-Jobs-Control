@@ -800,7 +800,7 @@ m2=1</panel_attributes>
 lt=&lt;-x
 m1=1
 m2=0..*</panel_attributes>
-    <additional_attributes>10.0;460.0;420.0;390.0;420.0;120.0;770.0;120.0;770.0;10.0;700.0;10.0</additional_attributes>
+    <additional_attributes>10.0;460.0;330.0;460.0;330.0;120.0;770.0;120.0;770.0;10.0;700.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -905,6 +905,22 @@ m2=1</panel_attributes>
 of 10 characters and must include at least a
 letter, a number and a puntuaction symbol
 bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1458</x>
+      <y>522</y>
+      <w>378</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Dashboard
+--
++ratioOfJobsThatHaveABisit:Double
++ratioOfBisitsThatHaveATracer:Double
++ratioOfApplicationsThatHaveAPasswordProtectedTracer:Double</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
