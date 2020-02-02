@@ -223,7 +223,7 @@
 		<property name="ticker" value="Rpomr-00912"/>
 		<property name="title" value="This is the title of the request"/>
 		<property name="creationMoment" value="2019/11/12 12:00"/>
-		<property name="deadline" value="2020/02/01 11:00"/>
+		<property name="deadline" value="2020/05/01 11:00"/>
 		<property name="text" value="Here we are describing this request"/>
 		<property name="reward" value="100"/>
 	</bean>

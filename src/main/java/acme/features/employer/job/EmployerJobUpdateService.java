@@ -59,6 +59,13 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		request.getModel().setAttribute("canBeUpdated", !entity.getFinalMode());
+		if (entity.getBisit() != null) {
+			request.getModel().setAttribute("hasABisit", true);
+			request.getModel().setAttribute("bisitId", entity.getBisit().getId());
+		} else {
+			request.getModel().setAttribute("hasABisit", false);
+		}
 		errors.state(request, this.checkReference(entity), "reference", "employer.job.error.reference");
 		errors.state(request, !this.isSpam(entity), "description", "employer.job.error.spam");
 		errors.state(request, this.dutyCompleted(entity), "finalMode", "employer.job.error.duties");

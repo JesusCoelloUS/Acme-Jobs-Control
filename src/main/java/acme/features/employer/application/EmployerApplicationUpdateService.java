@@ -51,6 +51,7 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		request.getModel().setAttribute("jobId", entity.getJob().getId());
 		errors.state(request, this.checkRejectDecision(entity), "rejectDecision", "employer.application.error.rejectDecision");
 		errors.state(request, this.checkOtherDecision(entity), "rejectDecision", "employer.application.error.otherDecision");
 	}

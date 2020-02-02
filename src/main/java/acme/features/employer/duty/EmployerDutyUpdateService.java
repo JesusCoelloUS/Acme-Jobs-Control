@@ -51,6 +51,7 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		request.getModel().setAttribute("canBeUpdated", !entity.getJob().getFinalMode());
 	}
 
 	@Override
